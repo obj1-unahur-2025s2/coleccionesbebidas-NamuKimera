@@ -10,7 +10,6 @@ describe "test de tito" {
         tito.consumir(5,terere)
     }
 
-
     test "tito tiene peso 70" {
         assert.equals(70,tito.peso())
     }
@@ -29,4 +28,7 @@ describe "test de tito" {
         assert.equals(0,tito.velocidad())
     }
 
+    test "si consume agua saborizada el rendimiento es 6" {
+        assert.equals(6,aguaSaborizada.rendimiento(20))
+    }
 }

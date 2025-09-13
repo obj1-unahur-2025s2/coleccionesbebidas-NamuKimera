@@ -15,6 +15,18 @@ object tito {
     }
 }
 
+object licuado {
+  const frutas = #{}
+  const nutrientes = 10
+
+  method cuantasFrutasHay() = frutas.size()
+  method rendimiento(cantidad) = 1 + 1/4 * cantidad
+}
+
+object aguaSaborizada {
+  method rendimiento(cantidad) = 1 + 1/4 * cantidad
+}
+
 object wisky {
     method rendimiento(cantidad) = 0.9 ** cantidad
 }
