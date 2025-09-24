@@ -8,7 +8,6 @@ object tito {
         cantidad = unaCantidad
     }
     method bebida() = bebida
-
     method velocidad() {
         return bebida.rendimiento(cantidad)
         * self.inerciaBase() / self.peso()
@@ -16,15 +15,37 @@ object tito {
 }
 
 object licuado {
-  const frutas = #{}
-  const nutrientes = 10
+    const frutas = #{}
+    var nutrientes = 10
 
-  method cuantasFrutasHay() = frutas.size()
-  method rendimiento(cantidad) = 1 + 1/4 * cantidad
+    method cuantasFrutasHay() = frutas.size()
+    method nutrientes() = nutrientes
+    method agregarFruta(unaFruta) {
+        frutas.add(unaFruta)
+        nutrientes += 3
+    }
+    method eliminarFruta(unaFruta) {
+        frutas.remove(unaFruta)
+        nutrientes -= 3
+    }
+    method agregarLeche(leche) {
+        frutas.add(leche)
+        nutrientes += 7
+    }
+    method agregarHielo(hielo) {
+        frutas.add(hielo)
+        nutrientes += 5
+    }
+    method agregarIngrediente(unIngrediente) {
+        frutas.add(unIngrediente)
+        nutrientes += 1
+    }
+    method nutrientesTotales() = nutrientes + frutas.sum({unaFruta => unaFruta.nutrientes()})
+    method rendimiento(cantidad) = 1 + 1/4 * cantidad + nutrientes
 }
 
 object aguaSaborizada {
-  method rendimiento(cantidad) = 1 + 1/4 * cantidad
+    method rendimiento(cantidad) = 1 + 1/4 * cantidad
 }
 
 object wisky {
